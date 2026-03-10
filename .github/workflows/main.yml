@@ -14,3 +14,11 @@ jobs:
       
       - name: greeting
         run: echo "This is my day-1 GitHub Actions's pipelien" 
+        
+  my_second_job:
+    name: My second job
+    runs-on: windows-latest
+  
+    steps:
+      - name: Greetings
+        run: write-host "Hello from windows"
