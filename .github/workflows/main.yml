@@ -6,6 +6,11 @@ jobs:
   my_first_jod:                          # it is job ID
     name: My First Job                   # it is the job name
     runs-on: ubuntu-latest               # Agent / Agent Pool  ->Here Github hosted agent taken
+    
     steps:
+      
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      
       - name: greeting
         run: echo "This is my day-1 GitHub Actions's pipelien" 
