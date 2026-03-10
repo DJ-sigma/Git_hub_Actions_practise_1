@@ -1,0 +1,11 @@
+name: Hello world workflow
+
+on: workflow_dispatch                    # workflow_dispatch= No trigger point set -> manual trigger 
+
+jobs:
+  my_first_jod:                          # it is job ID
+    name: My First Job                   # it is the job name
+    runs-on: ubuntu-latest               # Agent / Agent Pool  ->Here Github hosted agent taken
+    steps:
+      - name: greeting
+        run: echo "This is my day-1 GitHub Actions's pipelien" 
