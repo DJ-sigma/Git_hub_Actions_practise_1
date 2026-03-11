@@ -16,7 +16,7 @@ jobs:
       
       - name: greeting
         #run: echo "This is my day-1 GitHub Actions's pipeline executed by $NAME" 
-        run: echo "This is my day-1 GitHub Actions's pipeline executed by ${{ vars.NAME }}" 
+        run: echo "This is my day-1 GitHub Actions's pipeline executed by ${{ vars.NAME }} OS we are using {{ RUNNER.OS }}" 
         
   my_second_job:
     name: My second job
