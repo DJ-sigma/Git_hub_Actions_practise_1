@@ -22,7 +22,10 @@ jobs:
     needs: my_first_jod                  # my 2nd job will execute only post 1st job's sucess
     runs-on: windows-latest
     if: always()
+
+    env:
+      Day: "47 days remaining"
     
     steps:
       - name: Greetings
-        run: write-host "Hello from windows from $env:NAME"
+        run: write-host "Hello from windows from $env:NAME only $env:Day"
