@@ -15,7 +15,8 @@ jobs:
       #   uses: actions/checkout@v6.0.2
       
       - name: greeting
-        run: echo "This is my day-1 GitHub Actions's pipeline executed by $NAME" 
+        #run: echo "This is my day-1 GitHub Actions's pipeline executed by $NAME" 
+        run: echo "This is my day-1 GitHub Actions's pipeline executed by ${{ vars.NAME }}" 
         
   my_second_job:
     name: My second job
@@ -28,4 +29,4 @@ jobs:
     
     steps:
       - name: Greetings
-        run: write-host "Hello from windows from $env:NAME only $env:Day"
+        run: write-host "Hello from windows from $env:NAME only ${{ vars.Day }}"
