@@ -2,6 +2,8 @@ name: Hello world workflow
 
 on: workflow_dispatch                    # workflow_dispatch= No trigger point set -> manual trigger 
 
+env:
+  NAME: Debojyoti
 jobs:
   my_first_jod:                          # it is job ID
     name: My First Job                   # it is the job name
@@ -9,16 +11,18 @@ jobs:
     
     steps:
       
-      - name: Checkout
-        uses: actions/checkout@v6.0.2
+      # - name: Checkout
+      #   uses: actions/checkout@v6.0.2
       
       - name: greeting
-        run: echo "This is my day-1 GitHub Actions's pipelien" 
+        run: echo "This is my day-1 GitHub Actions's pipeline executed by $NAME" 
         
   my_second_job:
     name: My second job
+    needs: my_first_jod                  # my 2nd job will execute only post 1st job's sucess
     runs-on: windows-latest
-  
+    if: always()
+    
     steps:
       - name: Greetings
-        run: write-host "Hello from windows"
+        run: write-host "Hello from windows from $NAME"
