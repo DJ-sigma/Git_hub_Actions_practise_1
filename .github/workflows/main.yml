@@ -2,8 +2,8 @@ name: Hello world workflow
 
 on: workflow_dispatch                    # workflow_dispatch= No trigger point set -> manual trigger 
 
-env:
-  NAME: Debojyoti
+# env:
+#   NAME: Debojyoti
 jobs:
   my_first_jod:                          # it is job ID
     name: My First Job                   # it is the job name
@@ -23,8 +23,8 @@ jobs:
     runs-on: windows-latest
     if: always()
 
-    env:
-      Day: "47 days remaining"
+    # env:
+    #   Day: "47 days remaining"
     
     steps:
       - name: Greetings
